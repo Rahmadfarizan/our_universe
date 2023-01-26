@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:our_universe/constant.dart';
 import 'package:rive/rive.dart';
@@ -16,16 +17,25 @@ class _MoonAnimationWidgetState extends State<MoonAnimationWidget> {
   /// Controller for playback
   late RiveAnimationController _controller;
   String animations = "moon animation";
+  String audioasset = "mp3/intro.mp3";
+  final AudioPlayer player = AudioPlayer();
 
   @override
   void initState() {
     super.initState();
     _controller = SimpleAnimation(animations);
     startSplashScreen();
+    player.play(AssetSource(audioasset));
+  }
+
+  @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
   }
 
   startSplashScreen() async {
-    var duration = const Duration(milliseconds: 5000);
+    var duration = const Duration(milliseconds: 6800);
     return Future.delayed(duration, () {
       Navigator.pushReplacement<void, void>(
         context,
