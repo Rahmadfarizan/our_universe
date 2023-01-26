@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:our_universe/constant.dart';
 import 'package:rive/rive.dart';
 
+import 'main.dart';
+
 class MoonAnimationWidget extends StatefulWidget {
   const MoonAnimationWidget({Key? key}) : super(key: key);
 
@@ -19,6 +21,19 @@ class _MoonAnimationWidgetState extends State<MoonAnimationWidget> {
   void initState() {
     super.initState();
     _controller = SimpleAnimation(animations);
+    startSplashScreen();
+  }
+
+  startSplashScreen() async {
+    var duration = const Duration(milliseconds: 5000);
+    return Future.delayed(duration, () {
+      Navigator.pushReplacement<void, void>(
+        context,
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) => const HomeScreen(),
+        ),
+      );
+    });
   }
 
   @override
