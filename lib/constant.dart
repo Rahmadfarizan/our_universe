@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 // Color
 const Color kBackgroundColor = Color(0xFF1E1F22);
 const Color kOrange = Color(0xFFFB6220);
-Color kOrangeBright = Color.fromARGB(255, 248, 113, 55);
+Color kOrangeBright = const Color.fromARGB(255, 248, 113, 55);
 const Color kBlack = Colors.black;
 const Color kGrey = Color(0xFFA3A3A3);
 const Color kWhite = Colors.white;
@@ -52,4 +52,4 @@ final kTurretRoadRegular = GoogleFonts.turretRoad(
 );
 
 // Padding
-final double kDefaultPadding = 20.0;
+const double kDefaultPadding = 20.0;
