@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_universe/constant.dart';
 import 'package:our_universe/moon_animation_widget.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,22 +44,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(),
-      body: Stack(
-        children: <Widget>[
-          SvgPicture.asset(
-            'assets/img/space_background.svg',
-            alignment: Alignment.center,
-            width: size.width,
-            height: size.height,
-          ),
-          Column(
-            children: const [Expanded(child: Text('Home'))],
-          ),
-        ],
-      ),
-    );
+        appBar: AppBar(),
+        body: const Center(
+          child: Text('Home'),
+        ));
   }
 }
